@@ -1,0 +1,99 @@
+.inline_block(@va: top){
+    display: inline-block;
+    vertical-align: @va;
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+/**
+* Examples:
+* .inline-block(top,0); = { position: relative; display: inline-block;  vertical-align: top; margin-right: -4px; }
+* .inline-block(top,-4px,relative); = { position: relative; display: inline-block; vertical-align: top; margin-right: -4px; }
+* .inline-block(); = { position: relative; display: inline-block;}
+**/
+.pos_dis(@width){ position: relative; display: block; width: 100%;
+    & when (ispixel(@width)) { max-width: @width; margin: 0 auto; }
+}
+/**
+* Examples:
+* .pos_dis(relative); = { position: relative; display: block; width: 100%; }
+* .pos_dis(relative,860px); = { position: relative; display: block; width: 100%; max-width: 860px; margin: 0 auto; }
+* .pos_dis(); = { display: block; width: 100%;}
+**/
+.btn_reset(){ border: none; outline: none; background: none; padding: 0; }
+.col-one(@n){
+    width: @n * 4.1666%;
+}
+
+.box-sizing(@sizing: border-box) {
+    -webkit-box-sizing: @sizing;
+    -moz-box-sizing: @sizing;
+    box-sizing: @sizing;
+}
+
+.user-select(@argument: none) {
+    -webkit-user-select: @argument;
+    -moz-user-select: @argument;
+    -ms-user-select: @argument;
+    user-select: @argument;
+}
+
+.pseudo-clear(){
+    content: " ";
+    position: relative;
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+.abs_cent_img(@top: 0, @left: 0, @bottom: 0, @right:0){
+    position:absolute;
+    display:block;
+    top: @top;
+    left: @left;
+    bottom: @bottom;
+    right: @right;
+    margin: auto;
+}
+
+.transform(...) {
+    -webkit-transform: @arguments;
+    -moz-transform: @arguments;
+    -o-transform: @arguments;
+    -ms-transform: @arguments;
+    transform: @arguments;
+}
+.trforigin(@x:50%, @y:50%) {
+    -webkit-transform-origin: @x @y;
+    -moz-transform-origin: @x @y;
+    -ms-transform-origin: @x @y;
+    -o-transform-origin: @x @y;
+    transform-origin: @x @y;
+}
+
+.rotation(@deg:5deg){
+    .transform(rotate(@deg));
+}
+.scale(@ratio:1.5){
+    .transform(scale(@ratio));
+}
+.translate(@x:0, @y:0) {
+    .transform(translate(@x, @y));
+}
+
+.transition(@duration:0.218s, @ease:ease-in-out, @type:all) {
+    -webkit-transition: @type @duration @ease;
+    -moz-transition: @type @duration @ease;
+    -o-transition: @type @duration @ease;
+    transition: @type @duration @ease;
+}
+.rounded(@radius: 2px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}

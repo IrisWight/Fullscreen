@@ -1,0 +1,61 @@
+footer { background: #717a89; color: @white; z-index: 2;
+    .logo { position: relative; display: block; fill: @white; width: 33px; height: 33px;
+        transition: all .218s ease-in-out;
+        &:hover{fill: @blue;}
+    }
+    .copy { position: relative; margin-top: 20px;
+        font-size: 16px; line-height: 28px;
+        a { position: relative; display: inline-block; color: @white;
+            &:before { content: ''; position: absolute; display: block; width: 100%; height: 1px; left: 0; bottom: -3px;
+                opacity: 0; background: @white; transition: all .25s ease; }
+            &:hover { text-decoration: none;
+                &:before { bottom: 2px; opacity: .5; }
+            }
+        }
+    }
+    .soc-link { position: relative; margin-top: 30px;
+        a { display: inline-block; margin-right: 12px;
+            svg { position: relative; display: block; fill: @white; opacity: .6;
+                transform: scale(1);
+                transition: all .218s ease-in-out;
+                &.fb { width: 11px; height: 20px; }
+                &.yt { width: 20px; height: 14px; }
+                &.in { width: 17px; height: 14px; }
+                &.vk { width: 11px; height: 14px; }
+            }
+            &:hover svg { transform: scale(1.25); opacity: 1;fill: @blue; }
+        }
+    }
+    .foot-tit { position: relative; display: inline-block; vertical-align: top; margin-bottom: 25px;
+        font: 24px/28px @merelM; color: @white;
+        &:before{ content: ''; position: absolute; display: block; width: 100%; height: 1px; left: 0; bottom: -4px;
+            opacity: 0; background: @white;transition: all .25s ease;}
+        &:hover{ text-decoration: none;
+            &:before{ bottom: 0; opacity: .8;}
+        }
+    }
+    .block-three ul { position: relative; display: block; padding: 0; margin: 0; list-style: none;
+        li{ position: relative; display: block; margin-bottom: 10px;}
+        li a { position: relative; display: inline-block; opacity: .6;
+            font: 16px/20px @merel; color: @white;
+            &:before{ content: ''; position: absolute; display: block; width: 100%; height: 1px; left: 0; bottom: -3px;
+                opacity: 0; background: @white;transition: all .25s ease;}
+            &:hover{ opacity: 1; text-decoration: none;
+                &:before{ bottom: 0; opacity: .5;}
+            }
+        }
+        li a:hover{ opacity: 1;}
+    }
+    .block-one{transition: opacity .6s @cubicLight .45s, transform .6s @cubicLight .45s;}
+    .block-three .block-one:nth-child(1){transition-delay: .3s;}
+    .block-three .block-one:nth-child(2){transition-delay: .15s;}
+    .block-three .block-one:nth-child(3){transition-delay: 0s;}
+
+
+    &[data-anim="false"]{
+        .block-one{ opacity: 0; transform: translate(0,25px);}
+    }
+    &[data-anim="true"]{
+        .block-one{ opacity: 1; transform: translate(0,0);}
+    }
+}
